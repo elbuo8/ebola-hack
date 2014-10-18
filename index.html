@@ -1,38 +1,6 @@
 <!DOCTYPE HTML>
 <html>
   <body>
-    <script type='text/javascript'>
-      var coords;
-
-      var outbreaks = [
-        {
-          lat: 33.79245,
-          lon: -84.321305,
-          place: 'Emory University Hospital',
-        },
-        {
-          lat: 41.256035,
-          lon: -95.976186,
-          place: 'The Nebraska Medical Center'
-        }
-      ];
-
-      var checkDistance =  function () {
-        var minDis = 10000000;
-        for (var i = 0; i < outbreaks.length; i++) {
-          console.log(outbreaks[i]);
-          var distance = Math.sqrt(Math.pow((outbreaks[i].lat - coords.latitude), 2) + Math.pow((outbreaks[i].lon - coords.longitude), 2));
-          console.log(distance);
-          if (minDis > distance) minDis = distance;
-        }
-        console.log(minDis);
-      }
-
-      navigator.geolocation.getCurrentPosition(function (geoPos) {
-        coords = geoPos.coords;
-        checkDistance();
-      });
-
-    </script>
+    <script src='index.js' type='text/javascript'></script>
   </body>
 </html>
