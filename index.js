@@ -1,7 +1,7 @@
 Number.prototype.toRad = function() {
     return this * Math.PI / 180;
 }
-
+var nearestThreat;
 var coords;
 
 var outbreaks = [
@@ -38,6 +38,7 @@ var checkDistance =  function () {
             returnObj.place = outbreaks[i].place;
         }
     }
+
     return returnObj
 }
 
@@ -45,5 +46,7 @@ navigator.geolocation.getCurrentPosition(function (geoPos) {
     coords = geoPos.coords;
     nearestThreat = checkDistance();
     nearestThreat.distance /= 1.60934;
+    document.getElementById('myResults').innerHTML = nearestThreat.distance;
+    document.getElementById('myResults2').innerHTML = nearestThreat.place;
     console.log(nearestThreat);
 });
